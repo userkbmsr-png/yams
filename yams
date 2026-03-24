@@ -175,7 +175,7 @@ backup_yams() {
 
     # Copy current yams script and create backup
     cp "$(which yams)" "$INSTALL_DIRECTORY" || log_warning "Failed to backup yams script"
-    tar --exclude='transcoding-temp' -czf "$backup_file" -C "$INSTALL_DIRECTORY" . ||
+    tar --exclude='transcoding-temp' --exclude='config/jellyfin/cache' -czf "$backup_file" -C "$INSTALL_DIRECTORY" . ||
         log_error "Failed to create backup archive"
 
     echo -e "\nStarting YAMS services..."

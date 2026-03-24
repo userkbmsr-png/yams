@@ -5,3 +5,4 @@ tmp/
 
 docker-compose.yaml
 *.aider*
+CLAUDE.md
